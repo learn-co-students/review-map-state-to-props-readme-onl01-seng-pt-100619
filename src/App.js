@@ -6,13 +6,13 @@ import './App.css';
 class App extends Component {
 
   handleOnClickItems() {
-    this.props.store.dispatch({
+    this.props.dispatch({
       type: 'GET_COUNT_OF_ITEMS',
     });
   }
 
   handleOnClickUsers() {
-    this.props.store.dispatch({
+    this.props.dispatch({
       type: 'GET_COUNT_OF_USERS',
     });
   }
@@ -38,4 +38,13 @@ const mapStateToProps = (state) => {
   return { items: state.items }
 }
 
-export default connect(mapStateToProps)(App);
+// const vanilla = (milkshake) => {
+//   debugger;
+//   return { items: milkshake.items}
+// }
+
+// TO SELF: whatever argument name is passed into mapStateToProps (or whatever you name it)
+//          will default to 'state'
+
+export default connect( state => ({ items: state.items }) )(App)
+// export default connect(mapStateToProps)(App);
