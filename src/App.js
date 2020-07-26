@@ -16,11 +16,11 @@ class App extends Component {
       type: 'GET_COUNT_OF_USERS',
     });
   }
-
+// making changes
   render() {
     // debugger;
     return (
-      <div className="App">
+      <div className="Main">
           <button onClick={() => this.handleOnClickItems()}>
             Click to change items count
             </button>
